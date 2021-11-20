@@ -1,0 +1,9 @@
+amarelo
+vermelho
+azul
+preto
+marrom
+laranja
+uva
+manga
+morango

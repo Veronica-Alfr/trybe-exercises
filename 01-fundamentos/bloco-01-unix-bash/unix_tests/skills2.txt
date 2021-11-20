@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+Kernel
+Shell
+Soft Skliss
+Hard Skilss
+JS
