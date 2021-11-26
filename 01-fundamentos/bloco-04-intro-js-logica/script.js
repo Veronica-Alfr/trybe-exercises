@@ -1,4 +1,4 @@
-let age = 21;
+/*let age = 21;
 let fullName = "Verônica Alves";
 let city = "Montes Claros";
 
@@ -14,4 +14,15 @@ let color = null; //cor nula para ser atribuida seu valor dps
 
 num1+=num2 //soma e atribui o resultado em num1, sendo colocado no console.log(num1)
 
-//console.log(idade >=18 ? "Pode dirigir" : "Não pode"); //if ternário
+//console.log(idade >=18 ? "Pode dirigir" : "Não pode"); //if ternário.
+Manter tudo em lowercase, n precisa do uppercase*/
+
+let xadrez = "bispo";
+
+switch (xadrez) {
+ case "bispo": 
+    console.log("Diagonais");
+    break; 
+
+}
+
