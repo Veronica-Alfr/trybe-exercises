@@ -3,9 +3,20 @@ function paragrafo(frase) {
 }
 paragrafo("Me vejo numa empresa internacional.");
 
-document.querySelector(".main-content").style.backgroundColor = "rgb(76,164,109)";
+function backgroundTrybe() {
+    let mudarFundo = document.getElementsByClassName('main-content')[0];
+    mudarFundo.style.background = "rgb(76,164,109)";
+}
+backgroundTrybe();
 
-document.querySelector(".center-content").style.backgroundColor = "white";
+function backgroundCenter() {
+    let center = document.getElementsByClassName('center-content')[0];
+    center.style.background = "white";
+}
+backgroundCenter();
 
-document.querySelector(".title").innerText = "Exercício 5.1 - JavaScript";
-
+function textoH1() {
+    let changeH1 = document.getElementsByTagName('h1')[0];
+    changeH1.innerText = "Exercício 5.1 - JavaScript";
+}
+textoH1();
