@@ -18,9 +18,12 @@ console.log(terceiroFilho)
 let pai = document.getElementById("pai")
 let listaFilhos = pai.childNodes
 
-while (pai.firstChild) {
-    pai.removeChild()
+for(let i = listaFilhos.length - 1; i >= 0; i -=1){
+    if(listaFilhos[i].id !== "elementoOndeVoceEsta"){
+        listaFilhos[i].remove()
+    }
 }
+document.getElementById("segundoEUltimoFilhoDoFilho").remove()
 
 //document.querySelector(class/id).appendChild()
 
