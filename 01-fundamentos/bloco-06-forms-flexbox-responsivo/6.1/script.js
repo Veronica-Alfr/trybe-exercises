@@ -64,8 +64,8 @@ function datesFunc(event) {
    }
  }
  function datesVal() {
-   const valor = dates.value.split('/');
-   if (days(valor) || moth(valor) || year(valor)) {
+   const valor = dates.value.split('/');//dividir em um array
+   if (days(valor) || moth(valor) || year(valor) || dates.value.length !== 10) {
      alert('Essa data é invalida!');
      dates.value = '';
    }
