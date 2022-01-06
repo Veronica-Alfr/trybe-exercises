@@ -10,6 +10,7 @@
 <body>
 <main>
     <form action="" method="post">
+        <!-- method get ou post -->
     <fieldset>
         <legend>Dados Cadastrais</legend>
         <label for="name">Nome:</label>
@@ -26,11 +27,13 @@
         <select id="states" name="estados"></select><br>
         <p>Residência:</p>
         <label for="home-1">
+        <div>
         <input type="radio" id="residencia-1" name="home" checked>Casa
         </label>
         <label for="home">
         <input type="radio" id="residencia-2" name="home">Apartamento
         </label>
+        </div>
     </fieldset>
     <fieldset>
         <label for="curriculo">Resumo do Currículo:</label><br>
@@ -41,6 +44,9 @@
         <input type="text" id="cargo-descricao" name="cargo-descrito" maxlength="500"><br><br>
         <label for="date">Data de início:</label>
         <input type="text" id="dates" name="date" maxlength="10"><br><br>
+    <button id="btn">Submit</button>
+    <button id="btn-clear"></button>
+    <div id="dados"></div>
     </fieldset>
     </form>
 </main>

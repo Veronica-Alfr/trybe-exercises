@@ -1,6 +1,7 @@
 let states = document.getElementById("states");
 let statesBrazil =
-   [ 
+   [
+    "",
     "Acre",
     "Alagoas",
     "Amapá",
@@ -73,3 +74,126 @@ function datesFunc(event) {
  dates.addEventListener("keypress", datesFunc);
  dates.addEventListener("change", datesVal);
 
+let btn = document.getElementById("btn");
+btn.addEventListener("click", buttonSubmit)
+let inputName = document.getElementById("names");
+let inputEmail = document.getElementById("emails");
+let inputCpf = document.getElementById("cpfs");
+let inputEnd = document.getElementById("end");
+let inputCity = document.getElementById("citys");
+let selectState = document.getElementById("states");
+let inputCargo = document.getElementById("cargo-atual");
+let textArea = document.getElementById("resumo-curriculo");
+let inputDescricao = document.getElementById("cargo-descricao");
+let inputDate = document.getElementById("dates");
+let radio = document.getElementsByName("home")
+
+var dados = document.getElementById("dados");
+
+function buttonSubmit (event) {
+  event.preventDefault();
+  dados.innerHTML = '';
+
+if (inputName.value.length > 40 || inputName.value == "") {
+  alert("Quantidade de caracteres inválidos!");
+  return
+} else {
+  let p = document.createElement("p");
+  dados.appendChild(p);
+  p.innerText = "Nome: " + inputName.value;
+}
+
+  if (inputEmail.value.length > 50 || inputEmail.value == "") {
+    alert("Quantidade de caracteres inválidos!");
+    return
+  }else {
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "E-mail: " + inputEmail.value;
+  }
+
+  if (inputCpf.value.length > 11 || inputCpf.value == "") {
+    alert("Quantidade de caracteres inválidos!");
+  }
+
+  if (inputEnd.value.length > 200) {
+    alert("Quantidade de caracteres inválidos!");
+  }else {
+  let p = document.createElement("p");
+  dados.appendChild(p);
+  p.innerText = "Endereço: " + inputEnd.value;
+  }
+
+  if (inputCpf.value.length > 11) {
+    alert("Quantidade de caracteres inválidos!");
+  }else {
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "CPF: " + inputCpf.value;
+    }
+
+  if (inputCity.value.length > 28) {
+    alert("Quantidade de caracteres inválidos!");
+  }else {
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "Cidade: " + inputCity.value;
+    }
+
+  if (selectState.value == "") {
+    event.preventDefault();
+    alert("Escolha um estado!");
+  }else {
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "Estado: " + selectState.value;
+    }
+
+  if (inputCargo.value.length > 40) {
+    alert("Quantidade de caracteres inválidos!");
+  }else {
+    event.preventDefault();
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "Cargo: " + inputCargo.value;
+    }
+
+  if (inputDescricao.value.length > 500) {
+    alert("Quantidade de caracteres inválidos!");
+  }else {
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "Descrição do Currículo: " + inputDescricao.value;
+    }
+
+  if (textArea.value.length > 1000) {
+    alert("Quantidade de caracteres inválidos!");
+  }else {
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "Resumo do Currículo: " + textArea.value;
+    }
+
+  if (textArea.value.length > 1000) {
+    alert("Quantidade de caracteres inválidos!");
+  }
+  
+  for(let i = 0; i < radio.length; i += 1) {
+  if (radio.checked) {
+    alert("Escolha uma opção!");
+  }
+  }
+
+  if(alert){
+    let p = document.createElement("p");
+    dados.appendChild(p);
+    p.innerText = "Falta informações!!"
+    }
+}
+
+let btnClear = document.getElementById("btn-clear");
+btnClear.addEventListener("click", clear);
+
+function clear() {
+  
+}
