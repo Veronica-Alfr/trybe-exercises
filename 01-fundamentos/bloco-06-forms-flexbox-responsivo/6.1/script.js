@@ -90,98 +90,106 @@ function datesFunc(event) {
 let btn = document.getElementById("btn");
 btn.addEventListener("click", buttonSubmit)
 
-function buttonSubmit (event) {
+function verify (event) {
   event.preventDefault();
   dados.innerHTML = '';
 
 if (inputName.value.length > 40 || inputName.value == "") {
   alert("Quantidade de caracteres inválidos!");
   return
-} else {
-  let p = document.createElement("p");
-  dados.appendChild(p);
-  p.innerText = "Nome: " + inputName.value;
-}
+}//  else {
+//   let p = document.createElement("p");
+//   dados.appendChild(p);
+//   p.innerText = "Nome: " + inputName.value;
+// }
 
   if (inputEmail.value.length > 50 || inputEmail.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "E-mail: " + inputEmail.value;
   }
+  // else {
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "E-mail: " + inputEmail.value;
+  // }
 
   if (inputEnd.value.length > 200 || inputEnd.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-  let p = document.createElement("p");
-  dados.appendChild(p);
-  p.innerText = "Endereço: " + inputEnd.value;
   }
+  // else {
+  // let p = document.createElement("p");
+  // dados.appendChild(p);
+  // p.innerText = "Endereço: " + inputEnd.value;
+  // }
 
   if (inputCpf.value.length > 11 || inputCpf.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "CPF: " + inputCpf.value;
-    }
+  }
+  // else {
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "CPF: " + inputCpf.value;
+  //   }
 
   if (inputCity.value.length > 28 || inputCity.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "Cidade: " + inputCity.value;
-    }
+  }
+  // else {
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "Cidade: " + inputCity.value;
+  //   }
 
   if (selectState.value == "") {
     event.preventDefault();
     alert("Escolha um estado!");
     return
-  }else {
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "Estado: " + selectState.value;
-    }
+  }
+  // else {
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "Estado: " + selectState.value;
+  //   }
 
   if (inputCargo.value.length > 40 || inputCargo.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-    event.preventDefault();
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "Cargo: " + inputCargo.value;
-    }
+  }
+  // else {
+  //   event.preventDefault();
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "Cargo: " + inputCargo.value;
+  //   }
 
   if (inputDescricao.value.length > 500 || inputDescricao.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "Descrição do Currículo: " + inputDescricao.value;
-    }
+  }
+  // else {
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "Descrição do Currículo: " + inputDescricao.value;
+  //   }
 
   if (textArea.value.length > 1000 || textArea.value == "") {
     alert("Quantidade de caracteres inválidos!");
     return
-  }else {
-    let p = document.createElement("p");
-    dados.appendChild(p);
-    p.innerText = "Resumo do Currículo: " + textArea.value;
-    }
+  }
+  // else {
+  //   let p = document.createElement("p");
+  //   dados.appendChild(p);
+  //   p.innerText = "Resumo do Currículo: " + textArea.value;
+  //   }
   
-  for(let i = 0; i < radio.length; i += 1) {
-  if (radio.checked) {
-    alert("Escolha uma opção!");
-  }
-  }
+  // for(let i = 0; i < radio.length; i += 1) {
+  // if (radio.checked) {
+  //   alert("Escolha uma opção!");
+  // }
+  // }
 
   // if (alert){
   //   dados = "";
@@ -189,6 +197,19 @@ if (inputName.value.length > 40 || inputName.value == "") {
   //   dados.appendChild(p);
   //   p.innerText = "Falta informações!!"
   //   }
+
+}
+
+function buttonSubmit(event){
+  verify(event);
+
+  for(let i = 0; i < verify.length; i+= 1) {
+    let p = document.createElement("p");
+    
+  //for não funcionará aqui já que os inputs possuem nomes diferentes.
+    
+    dados.appendChild(p[i])
+ }
 }
 
 let btnClear = document.getElementById("btn-clear");
