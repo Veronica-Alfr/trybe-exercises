@@ -3,7 +3,7 @@ let inputEmail = document.getElementById("emails");
 let inputCpf = document.getElementById("cpfs");
 let inputEnd = document.getElementById("end");
 let inputCity = document.getElementById("citys");
-let selectState = document.getElementById("states");
+let states = document.getElementById("states");
 let inputCargo = document.getElementById("cargo-atual");
 let textArea = document.getElementById("resumo-curriculo");
 let inputDescricao = document.getElementById("cargo-descricao");
@@ -11,8 +11,17 @@ let inputDate = document.getElementById("dates");
 let radio = document.getElementsByName("home")
 var dados = document.getElementById("dados");
 let dadosCadastro = document.getElementsByClassName("dados-cadastro");
+let day = document.getElementById("dates");
 
-let states = document.getElementById("states");
+const nomeMaxLength = inputName.maxLength;
+const emailMaxLength = inputEmail.maxLength;
+const cpfMaxLength = inputCpf.maxLength;
+const endMaxLength = inputEnd.maxLength;
+const cityMaxLength = inputCity.maxLength;
+const resumoMaxLength = textArea.maxLength;
+const cargoMaxLength = inputCargo.maxLength;
+const descricaoMaxLength = inputDescricao.maxLength;
+
 let statesBrazil =
    [
     "",
@@ -45,13 +54,14 @@ let statesBrazil =
     "Tocantins",
    ]
 
+   function statesOptions(){
 for (let j = 0; j < statesBrazil.length; j += 1) {
    let option = document.createElement("option");
    option.innerHTML = statesBrazil[j];
    states.appendChild(option)
 }
+}
 
-let day = document.getElementById("dates");
 function datesFunc(event) {
    if (isNaN(event.key))//.key observa a tecla que foi clicada 
    {
@@ -89,140 +99,130 @@ function datesFunc(event) {
  dates.addEventListener("change", datesVal);
 
 let btn = document.getElementById("btn");
-btn.addEventListener("click", buttonSubmit);
+btn.addEventListener("click", verify);
 
 function verify (event) {
   event.preventDefault();
   dados.innerHTML = '';
 
-  for(let i = 0; i < dadosCadastro.length; i += 1) {
-    if(!dadosCadastro[i].value){
-    alert("Dados inválidos!")
-    return
+  // for(let i = 0; i < dadosCadastro.length; i += 1) {
+  //   if(!dadosCadastro[i].value){
+  //   alert("Dados inválidos!")
+  //   return
+  //   }
+  // }
+
+if (inputName.value.length > nomeMaxLength || inputName.value == "") {
+  return mensageError("Nome: ", inputName, nomeMaxLength)
+  //entre (string, variavel)
+} else {
+  mensageOk("Nome: ", inputName)
+}
+
+  if (inputEmail.value.length > 50 || inputEmail.value == "") {
+    return mensageError("Email: ", inputEmail, emailMaxLength);
+   }
+    else {
+      mensageOk("Email: ", inputEmail);
     }
+
+  if (inputEnd.value.length > 200 || inputEnd.value == "") {
+    return mensageError("Endereço: ", inputEnd, endMaxLength);
+  }
+  else {
+    mensageOk("Endereço: ", inputEnd);
   }
 
-// if (inputName.value.length > 40 || inputName.value == "") {
-//   alert("Quantidade de caracteres inválidos!");
-//   return
-// }//  else {
-//   let p = document.createElement("p");
-//   dados.appendChild(p);
-//   p.innerText = "Nome: " + inputName.value;
-// }
+  if (inputCpf.value.length > 11 || inputCpf.value == "") {
+      return mensageError("CPF: ", inputCpf, cpfMaxLength);
+  }
+  else {
+      mensageOk("CPF: ", inputCpf);
+    }
 
-  // if (inputEmail.value.length > 50 || inputEmail.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
-  // }
-  // else {
-  //   let p = document.createElement("p");
+  if (inputCity.value.length > 28 || inputCity.value == "") {
+    return mensageError("Cidade: ", inputCity, cityMaxLength);
+  }
+  else {
+    mensageOk("Cidade: ", inputCity);
+  }
+
+  if (inputCargo.value.length > 40 || inputCargo.value == "") {
+    return mensageError("Cargo: ", inputCargo, cargoMaxLength);
+  }
+  else {
+    mensageOk("Cargo: ", inputCargo);
+  }
+
+  if (inputDescricao.value.length > 500 || inputDescricao.value == "") {
+    return mensageError("Descrição do Cargo: ", inputDescricao, descricaoMaxLength);
+  }
+  else {
+    mensageOk("Descrição do Cargo: ", inputDescricao);
+  }
+
+  if (textArea.value.length > 1000 || textArea.value == "") {
+    return mensageError("Resumo do Currículo: ", textArea, resumoMaxLength);
+  } else {
+    mensageOk("Resumo do Currículo: ", textArea);
+  }
+
+  // if(!statesBrazil[j]){
+  //   statesOptions();
+  //   const p = document.createElement('p');
+  //   p.classList.add('erro');
+  //   p.innerHTML = "Escolha um estado!";
+  //   states.focus();
+  //   return dados.appendChild(p);
+  // } else {
+  //   const p = document.createElement('p');
+  //   p.classList.add("certo");
+  //   p.innerHTML = `Estado: ${states[i].value}`;
   //   dados.appendChild(p);
-  //   p.innerText = "E-mail: " + inputEmail.value;
   // }
 
-  // if (inputEnd.value.length > 200 || inputEnd.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
-  // }
-  // else {
-  // let p = document.createElement("p");
-  // dados.appendChild(p);
-  // p.innerText = "Endereço: " + inputEnd.value;
-  // }
-
-  // if (inputCpf.value.length > 11 || inputCpf.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
-  // }
-  // else {
-  //   let p = document.createElement("p");
+  // if(!dates) {
+  //   const p = document.createElement('p');
+  //   p.classList.add('erro');
+  //   p.innerHTML = "O campo data está vázio!";
+  //   states.focus();
+  //   return dados.appendChild(p)
+  // } else {
+  //   const p = document.createElement('p');
+  //   p.classList.add("certo");
+  //   p.innerHTML = `Data: ${dates.value}`;
   //   dados.appendChild(p);
-  //   p.innerText = "CPF: " + inputCpf.value;
-  //   }
-
-  // if (inputCity.value.length > 28 || inputCity.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
   // }
-  // else {
-  //   let p = document.createElement("p");
-  //   dados.appendChild(p);
-  //   p.innerText = "Cidade: " + inputCity.value;
-  //   }
 
-  // if (selectState.value == "") {
-  //   event.preventDefault();
-  //   alert("Escolha um estado!");
-  //   return
-  // }
-  // else {
-  //   let p = document.createElement("p");
-  //   dados.appendChild(p);
-  //   p.innerText = "Estado: " + selectState.value;
-  //   }
+  window.location.href = '#dados';
 
-  // if (inputCargo.value.length > 40 || inputCargo.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
-  // }
-  // else {
-  //   event.preventDefault();
-  //   let p = document.createElement("p");
-  //   dados.appendChild(p);
-  //   p.innerText = "Cargo: " + inputCargo.value;
-  //   }
-
-  // if (inputDescricao.value.length > 500 || inputDescricao.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
-  // }
-  // else {
-  //   let p = document.createElement("p");
-  //   dados.appendChild(p);
-  //   p.innerText = "Descrição do Currículo: " + inputDescricao.value;
-  //   }
-
-  // if (textArea.value.length > 1000 || textArea.value == "") {
-  //   alert("Quantidade de caracteres inválidos!");
-  //   return
-  // }
-  // else {
-  //   let p = document.createElement("p");
-  //   dados.appendChild(p);
-  //   p.innerText = "Resumo do Currículo: " + textArea.value;
-  //   }
-
-  //MEXER COM AS DIV'S
-  // if (alert){
-  //   dados = "";
-  //   let p = document.createElement("p");
-  //   dados.appendChild(p);
-  //   p.innerText = "Falta informações!!"
-  //   }
-
+    // for(let i = 0; i < radio.length; i += 1) {
+    //   if (radio[i].checked) {
+    //     let textChild = radio[i].parentNode.innerText;
+    //     //parâmetro 1 não é o tipo de Node.
+    //     let ph = document.createElement("p"); 
+    //     ph = "Residência: " + textChild;
+    //     dados.appendChild(ph);
+    //     console.log(ph)
+    //     console.log(radio[i].value)
+    //   }
+    //   }
 }
 
-function radioTrue(event) {
-  event.preventDefault();
-  for(let i = 0; i < radio.length; i += 1) {
-    if (radio[i].checked) {
-      let textChild = radio[i].parentNode.innerText;
-      //parâmetro 1 não é o tipo de Node.
-      let ph = document.createElement("p"); 
-      ph = "Residência: " + textChild;
-      dados.appendChild(ph);
-      console.log(ph)
-      console.log(radio[i].value)
-    }
-    }
+function mensageError(string, element, maxLength) {
+  element.maxLength = maxLength;
+  element.value = "";
+  const p = document.createElement('p');
+  p.classList.add('erro');
+  p.innerHTML = `O campo ${string} está incorreto!`;
+  dados.appendChild(p);
 }
 
-function buttonSubmit(event){
-  verify(event);
-  radioTrue(event);
-
-
+function mensageOk(string, element){
+  const p = document.createElement('p');
+  p.classList.add('certo');
+  p.innerHTML = `${string} ${element.value}`;
+  dados.appendChild(p);
 }
 
 let btnClear = document.getElementById("btn-clear");
@@ -231,3 +231,7 @@ btnClear.addEventListener("click", clear);
 function clear() {
   
 }
+
+//com o for pecorrendo dados cadastrados, ao usar o .value e questionar
+//se é true ou false, pode ser possível trazer de volta a string(nome)
+//referente ao que está sendo pecorrido e trazer o seu valor dentro de uma div.
