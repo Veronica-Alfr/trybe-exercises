@@ -6,27 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="DatePickerX-master/dist/css/DatePickerX.min.css">
+    <script src="node_modules/just-validate/dist/just-validate.production.min.js"></script>
+    <script src="DatePickerX-master/dist/js/DatePickerX.min.js"></script>
 </head>
 <body>
 <main>
-    <form action="" method="post">
+    <form action="" method="post" id="form">
         <!-- method get ou post -->
     <fieldset>
         <legend>Dados Cadastrais</legend>
-        <label for="name">Nome:</label>
-        <input type="text" class="dados-cadastro" id="names" name="name" maxlength="40"><br><br>
-        <label for="email">E-mail:</label>
-        <input type="text" class="dados-cadastro" id="emails" name="email" maxlength="50"><br><br>
-        <label for="CPF">CPF:</label>
-        <input type="text" class="dados-cadastro" id="cpfs" name="CPF" maxlength="11"><br><br>
-        <label for="endereco">Endereço:</label>
-        <input type="text" class="dados-cadastro" id="end" name="endereco" maxlength="200"><br><br>
-        <label for="city">Cidade:</label>
-        <input type="text" class="dados-cadastro" id="citys" name="city" maxlength="28"><br><br>
-        <label for="estados">Estados:</label>
-        <select class="dados-cadastro" id="states" name="estados"></select><br>
-        <p>Residência:</p>
         <div>
+        <label for="name">Nome:</label>
+        <input type="text" class="dados-cadastro" id="names" name="name" maxlength="40">
+       </div>
+       <div>
+        <label for="email">E-mail:</label>
+        <input type="text" class="dados-cadastro" id="emails" name="email" maxlength="50">
+        </div>
+       <div>
+        <label for="CPF">CPF:</label>
+        <input type="text" class="dados-cadastro" id="cpfs" name="CPF" maxlength="11">
+       </div>
+       <div>
+        <label for="endereco">Endereço:</label>
+        <input type="text" class="dados-cadastro" id="end" name="endereco" maxlength="200">
+       </div>
+       <div>
+        <label for="city">Cidade:</label>
+        <input type="text" class="dados-cadastro" id="citys" name="city" maxlength="28">
+       </div>
+       <div>
+        <label for="estados">Estados:</label>
+        <select class="dados-cadastro" id="states" name="estados"></select>
+       </div>
+        <p>Residência:</p>
+        <div id="radio-group">
         <label for="home">
         <input type="radio" id="residencia-1" name="home" checked>Casa
         </label>
@@ -36,14 +51,22 @@
         </div>
     </fieldset>
     <fieldset>
+       <div>
         <label for="curriculo">Resumo do Currículo:</label><br>
         <textarea class="dados-cadastro" id="resumo-curriculo" name="curriculo" maxlength="1000" rows="4" cols="50"></textarea><br>
+       </div>
+       <div>
         <label for="cargo">Cargo Atual:</label>
         <input type="text" class="dados-cadastro" id="cargo-atual" name="cargo" maxlength="40"><br><br>
+       </div>
+       <div>
         <label for="cargo-descrito">Descrição do cargo:</label>
         <input type="text" class="dados-cadastro" id="cargo-descricao" name="cargo-descrito" maxlength="500"><br><br>
+       </div>
+       <div>
         <label for="date">Data de início:</label>
         <input type="text" id="dates" name="date" maxlength="10"><br><br>
+       </div>
     <button id="btn">Submit</button>
     <button id="btn-clear">Limpar</button>
     <div id="dados"></div>
