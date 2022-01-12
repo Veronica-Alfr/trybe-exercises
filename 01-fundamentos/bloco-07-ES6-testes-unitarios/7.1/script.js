@@ -11,10 +11,23 @@
 
 //   testingScope(true);
 
-  const oddsAndEvens = [13, 3, 4, 10, 7, 2];
-  oddsAndEvens.sort((a, b) => a - b);
+  // const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+  // oddsAndEvens.sort((a, b) => a - b);
   //a será o 1° numero comparando com o próximo número que será o b.
   //
-  const text = "se encontram ordenados de forma crescente!";
-  oddsAndEvens.forEach((x) => console.log(x));
-  console.log(`Os números ${oddsAndEvens.join(',')} ${text}`);
+  // const text = "se encontram ordenados de forma crescente!";
+  // oddsAndEvens.forEach((x) => console.log(x));
+  // console.log(`Os números ${oddsAndEvens.join(',')} ${text}`);
+
+//fatorial de numeros com ternário
+const fatorial = (fator) => {
+  for(let i = fator; i > 0; i -= 1) {
+    let fatorando = fator*i;
+    console.log(fatorando);
+  }
+}
+
+// const fatorial = (number) => {
+//   let fator = number;
+//   number * (number - 1)
+// }
