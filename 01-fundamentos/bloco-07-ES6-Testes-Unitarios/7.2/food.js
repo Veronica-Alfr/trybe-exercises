@@ -36,7 +36,10 @@ const order = {
   
   const customerInfo = (order) => {
     // Adicione abaixo as informações necessárias.
-  
+    const orderValues = Object.values(order); //pecorre todas as chaves principais
+    const adressValues = Object.values(order.adress);
+    console.log(`Olá Ana, entrega para: ${orderValues[0]}, Telefone: ${orderValues[1]},
+    R. ${adressValues[0]}, N°: ${adressValues[1]}, Apt: ${adressValues[2]}`)
   }
   
   customerInfo(order);
@@ -44,6 +47,7 @@ const order = {
   const orderModifier = (order) => {
     // Adicione abaixo as informações necessárias.
   
+
   }
   
   orderModifier(order);
