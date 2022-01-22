@@ -93,3 +93,16 @@ function fantasyOrScienceFictionAuthors() {
  return theBooks.map((nameAuthor) => nameAuthor.author.name).sort();
 }
 console.log(fantasyOrScienceFictionAuthors());
+
+function oldBooks() {
+  const books60 = books.filter((book) =>  2022 - book.releaseYear > 60);
+  return books60.map((book60) => book60.name);
+}
+console.log(oldBooks());
+
+function authorWith3DotsOnName() {
+  const nameWithDots = books.filter((name3Dots) =>  
+  name3Dots.author.name[1] === '.' && name3Dots.author.name[4] === '.' && name3Dots.author.name[7] === '.');
+  return nameWithDots.map((book) => book.name).toString();
+}
+console.log(authorWith3DotsOnName());
