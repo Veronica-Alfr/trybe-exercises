@@ -61,10 +61,10 @@ const books = [
   },
 ];
   
-//   function formatedBookNames() {
-//     return books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
-//   }
-//   console.log(formatedBookNames());
+  function formatedBookNames() {
+    return books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
+  }
+  console.log(formatedBookNames());
 
   function nameAndAge() {
     return books.map((book) => (
@@ -73,5 +73,23 @@ const books = [
     age: book.releaseYear - book.author.birthYear,
         }
     )).sort((a, b) => a.age - b.age);
-}
+};
 console.log(nameAndAge());
+
+const fantasyOrScienceFiction = () => {
+ return books.filter((bookFanFic) => 
+bookFanFic.genre === 'Ficção Científica' || bookFanFic.genre === 'Fantasia');
+};
+console.log(fantasyOrScienceFiction());
+
+const oldBooksOrdered = () => {
+ return books.filter((book) => 
+ 2022 - book.releaseYear > 60).sort((book1, book2) => book1.releaseYear - book2.releaseYear);
+}
+console.log(oldBooksOrdered());
+
+function fantasyOrScienceFictionAuthors() {
+  const theBooks = books.filter((obj) => obj.genre === 'Ficção Científica' || obj.genre === 'Fantasia');
+ return theBooks.map((nameAuthor) => nameAuthor.author.name).sort();
+}
+console.log(fantasyOrScienceFictionAuthors());
