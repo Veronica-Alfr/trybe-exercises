@@ -6,5 +6,5 @@ const yearSeasons = {
   };
 
   const mothsOfYear = ({winter, spring, summer, autumn}) => 
-  yearSeasons.winter.splice(1, 3).concat([ ...spring, ...summer, ...autumn, winter[0]])
+  yearSeasons.winter.splice(1, 2).concat([ ...spring, ...summer, ...autumn, winter[0]])
   console.log(mothsOfYear(yearSeasons))
